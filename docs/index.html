@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QuantStrike — GPU-Accelerated Fraud Inference Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="kicker">FinTech AI · GPU acceleration · low-latency inference</div>
+    <h1>QuantStrike</h1>
+    <p class="lede">A fraud classifier compiled through <span class="g">FP32 → FP16 → INT8</span>
+      with TensorRT, then scored in real time. Watch latency collapse while accuracy holds.</p>
+  </header>
+
+  <section class="bench">
+    <h2>Quantization benchmark</h2>
+    <p class="sub">Per-precision latency &amp; throughput. Bars animate to scale; numbers are the
+      engine's target profile — reproduce your own with <code>src/benchmark.py</code>.</p>
+    <div class="modes" id="modes"></div>
+    <button id="run" class="run">▶ Run benchmark sweep</button>
+  </section>
+
+  <section class="split">
+    <div class="card stream">
+      <h2>Live scoring stream</h2>
+      <p class="sub">Transactions classified into risk tiers · INT8 engine</p>
+      <div class="ticker" id="ticker"></div>
+    </div>
+
+    <div class="card detail">
+      <h2>Case detail</h2>
+      <p class="sub" id="caseId">awaiting flagged transaction…</p>
+      <div class="score" id="score"></div>
+      <h3>SHAP drivers</h3>
+      <div class="shap" id="shap"></div>
+      <div class="ring" id="ring"></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Browser simulation. Real engine: PyTorch → ONNX → TensorRT, benchmarked with
+      <code>src/benchmark.py</code>, explained with <code>src/explain.py</code>.</span>
+    <a href="https://github.com/Sadhik07/fraud-inference-engine">Source ↗</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
