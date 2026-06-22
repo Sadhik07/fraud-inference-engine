@@ -5,7 +5,6 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c)
 ![TensorRT](https://img.shields.io/badge/TensorRT-FP16%2FINT8-76b900)
 ![ONNX](https://img.shields.io/badge/ONNX-Runtime-005ce6)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 A transaction-fraud classifier that fuses **entity embeddings + feature attention**
 with **graph-derived linkage features** from a card/device graph (Neo4j in production,
@@ -121,5 +120,4 @@ tests/                # CPU smoke + correctness tests
 ```
 
 ## License
-
-MIT — see [LICENSE](LICENSE).
+Sadhik — see [LICENSE](LICENSE).
